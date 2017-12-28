@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         loadWeatherData();
     }
-    
+
     private void loadWeatherData() {
         String location = SunshinePreferences.getPreferredWeatherLocation(this);
         new FetchWeather().execute(location);
