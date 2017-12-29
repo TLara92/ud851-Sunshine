@@ -221,8 +221,15 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
             return true;
         }
 
-        // TODO (2) Launch the map when the map menu item is clicked
-
+        if(id == R.id.open_map) {
+            String uriAddress = "12489 Adlarshof, Berlin";
+            Uri.Builder builder = new Uri.Builder();
+            builder.scheme("geo").path("0,0").query(uriAddress);
+            Uri urlAddress = builder.build();
+            Intent intent = new Intent(Intent.ACTION_VIEW, urlAddress);
+            if (intent != null)
+                startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 }
